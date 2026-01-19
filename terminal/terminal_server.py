@@ -1,1 +1,0 @@
-# Dodaj tutaj logikę nasłuchiwania na przesyłaną kwotę od kasy na porcie innym niż 8000

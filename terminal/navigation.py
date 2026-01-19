@@ -1,6 +1,5 @@
 from config import *
 import RPi.GPIO as GPIO
-from terminal.bank_communication.card_reader import read_card
 
 
 def redButtonCallback(pin):

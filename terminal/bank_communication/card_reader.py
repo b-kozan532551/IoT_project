@@ -22,13 +22,11 @@ def read_card(value):
             (status_anti, uid) = MIFAREReader.MFRC522_Anticoll()
 
             if status_req == MIFAREReader.MI_OK and status_anti == MIFAREReader.MI_OK:
-                card_id = uid
+                card_id = "-".join(map(str, uid))
 
             time.sleep(0.1)
     except KeyboardInterrupt:
         print("\nKoniec.")
-    finally:
-        GPIO.cleanup()
 
     result = send_request(card_id, value)
 

@@ -1,0 +1,1 @@
+# Gdy użytkownik zakończy skanowanie, wciska enter i kwota jest wysyłana do terminal_server
