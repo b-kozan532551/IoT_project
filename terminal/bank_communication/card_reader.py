@@ -12,7 +12,7 @@ def send_request(card_id, value):
     return verify_payment(card_id, pin, value)
 
 
-def read_card(value):
+def read_card(value: int) -> bool:
     MIFAREReader = MFRC522()
     card_id = None
 

@@ -8,7 +8,7 @@ def get_cursor():
     return connection.cursor()
 
 
-def create_db():
+def create_bank_db():
     cursor = get_cursor()
 
     cursor.execute('''
