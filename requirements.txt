@@ -1,0 +1,17 @@
+# Web framework and server
+fastapi==0.109.0
+uvicorn==0.27.0
+pydantic==2.5.3
+
+# HTTP client
+requests==2.31.0
+
+# Bar code scanner
+pyzbar==0.1.9
+opencv-python==4.13.0.90
+
+# Raspberry Pi and IoT hardware
+# RPi.GPIO==0.7.1
+# mfrc522==0.0.7
+# adafruit-circuitpython-neopixel==6.3.11
+# adafruit-blinka==8.40.0
