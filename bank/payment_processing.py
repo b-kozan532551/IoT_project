@@ -1,4 +1,4 @@
-from database_config import update_card_balance, get_card_data
+from bank.database_config import update_card_balance, get_card_data
 from hash_data import hash_data_and_check
 from logger_config import log
 

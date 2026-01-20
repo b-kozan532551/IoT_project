@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import uvicorn
-import hashlib
-from payment_processing import verify_payment
+from bank.payment_processing import verify_payment
 
 
 app = FastAPI()
@@ -14,8 +13,9 @@ class VerificationRequest(BaseModel):
     value: int
 
 
-def simple_hash(text):
-    return hashlib.sha256(text.encode()).hexdigest()
+@app.get("/test")
+def test_endpoint():
+    return {"message": "Bank server is running"}    
 
 
 @app.post("/verify_payment")
