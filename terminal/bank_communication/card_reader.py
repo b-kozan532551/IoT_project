@@ -5,6 +5,8 @@ from mfrc522 import MFRC522
 import board
 import neopixel
 from terminal_client import verify_payment
+import screen
+    
 
 
 def send_request(card_id, value):
@@ -12,12 +14,26 @@ def send_request(card_id, value):
     return verify_payment(card_id, pin, value)
 
 
+button_pressed = False
+
+
+def redButtonCallback(pin):
+    button_pressed = True
+
+
 def read_card(value: int) -> bool:
     MIFAREReader = MFRC522()
     card_id = None
+    GPIO.add_event_detect(buttonRed, GPIO.FALLING, callback=redButtonCallback, bouncetime=200)
+    screen.total_value_display(value)
 
     try:
         while card_id is None:
+            if button_pressed:
+                screen.clear_screen()
+                screen.payment_failed()
+                return False
+            
             (status_req, TagType) = MIFAREReader.MFRC522_Request(MIFAREReader.PICC_REQIDL)
             (status_anti, uid) = MIFAREReader.MFRC522_Anticoll()
 
@@ -29,11 +45,14 @@ def read_card(value: int) -> bool:
         print("\nKoniec.")
 
     result = send_request(card_id, value)
+    screen.clear_screen()
 
     if result:
         confirm()
+        screen.payment_successful()
     else:
         deny()
+        screen.payment_failed()
     return result
 
 
