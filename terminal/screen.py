@@ -33,18 +33,22 @@ def display_message(line1, line2, color="WHITE"):
 
 def payment_failed():
     display_message("PAYMENT", "FAILED")
-    time.sleep(3)
+    time.sleep(5)
     disp.clear()
 
 
 def payment_successful():
     display_message("PAYMENT", "SUCCESSFUL")
-    time.sleep(3)
+    time.sleep(5)
     disp.clear()
 
 
 def total_value_display(value):
     display_message("TOTAL VALUE", (value / 100).toString() + " pln")
+
+
+def input_pin():
+    display_message("PIN NUMBER")
 
 
 def clear_screen():
