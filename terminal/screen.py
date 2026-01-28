@@ -44,7 +44,7 @@ def payment_successful():
 
 
 def total_value_display(value):
-    display_message("TOTAL VALUE", (value / 100).toString() + " pln")
+    display_message("TOTAL VALUE", str(value / 100) + " pln")
 
 
 def input_pin():
@@ -70,4 +70,4 @@ def init_screen():
         disp.reset()
 
 if __name__ == "__main__":
-    main()
+    init_screen()

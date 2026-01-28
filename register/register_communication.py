@@ -1,5 +1,5 @@
-from product_scanner import scan_bar_codes
-from product_database import Product
+from register.product_scanner import scan_bar_codes
+from register.product_database import Product, initialize_product_db
 import paho.mqtt.publish as publish
 import paho.mqtt.subscribe as subscribe
 import json
@@ -40,6 +40,7 @@ def run_register():
 
 
 if __name__ == "__main__":
+    initialize_product_db()
     prev_products = run_register()
     print(f"Register is listening on topic {TOPIC_GET}...")
     subscribe.callback(listen, TOPIC_GET, hostname=BROKER_HOST)

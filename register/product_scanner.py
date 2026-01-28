@@ -1,7 +1,7 @@
 import cv2
 import time
 
-from product_database import get_product, Product
+from register.product_database import get_product, Product
 
 BAR_CODE_LENGTH = 13
 

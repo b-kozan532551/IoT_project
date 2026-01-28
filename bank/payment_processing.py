@@ -12,7 +12,7 @@ def check_balance(data, value):
 
 
 def verify_payment(id, data_hash, value):
-    log.info('Veryfying the payment')
+    log.info('Verifying the payment')
     data = get_card_data(id)
 
     if data is None:

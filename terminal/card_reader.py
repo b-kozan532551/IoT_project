@@ -4,7 +4,7 @@ from terminal.config import *
 from mfrc522 import MFRC522
 import board
 import neopixel
-import screen
+from terminal import screen
 
 
 button_pressed = False
